@@ -134,7 +134,7 @@ def checks(tip):
 			rel = cv2.minMaxLoc(cv2.matchTemplate(img, bot_data["images"]["caught_fish"]["release"], cv2.TM_SQDIFF))
 			if rel[0] <= 1000000:
 				mouse.move(rel[2][0], rel[2][1], absolute=True, duration=0)
-				keyboard.press_and_release('backspace')  
+				mouse.click(button="left")
 				time.sleep(2)
 				return True
 
